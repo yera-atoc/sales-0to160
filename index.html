@@ -5,14 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>0to160 — Подготовка к Duolingo English Test на русском</title>
   
-  <!-- Open Graph для красивого превью в Telegram, WhatsApp, Instagram и т.д. -->
+  <!-- Open Graph / Соцсети / Telegram превью -->
   <meta property="og:title" content="0to160 — DET на русском с нуля до 160" />
-  <meta property="og:description" content="20 уроков + 500+ вопросов + AI проверка эссе и speaking. Первые 3 урока бесплатно!" />
+  <meta property="og:description" content="20 уроков + 500+ вопросов + AI проверка. Первые 3 урока бесплатно! Для всего СНГ" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://твоя-ссылка.vercel.app" />
-  <meta property="og:image" content="https://via.placeholder.com/1200x630/58cc02/ffffff?text=0to160" /> <!-- замени на свою картинку позже -->
+  <meta property="og:url" content="https://0to160.vercel.app" />
+  <meta property="og:image" content="https://via.placeholder.com/1200x630/58cc02/000000?text=0to160+DET" />
   
-  <!-- Цвета и иконка -->
   <meta name="theme-color" content="#58cc02" />
   <link rel="icon" href="https://via.placeholder.com/32/58cc02/ffffff?text=0" type="image/png" />
 
@@ -28,10 +27,8 @@
     html{scroll-behavior:smooth;scroll-snap-type:y mandatory}
     body{font-family:'Manrope',sans-serif;background:var(--dark);color:white;overflow-x:hidden}
 
-    /* ── SLIDES ── */
     .slide{min-height:100vh;scroll-snap-align:start;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 24px;position:relative;overflow:hidden}
 
-    /* ── SLIDE 1: HERO ── */
     .s1{background:var(--dark)}
     .s1::before{content:'';position:absolute;inset:0;
       background:radial-gradient(ellipse 80% 60% at 50% -10%,rgba(88,204,2,.18),transparent 55%),
@@ -59,7 +56,6 @@
     @keyframes bounce{0%,100%{transform:rotate(45deg) translateY(0)}50%{transform:rotate(45deg) translateY(5px)}}
     @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
 
-    /* ── SLIDE 2: PROBLEM ── */
     .s2{background:#0a0a08}
     .s2::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 40% at 0% 50%,rgba(255,75,75,.06),transparent)}
     .s2-inner{max-width:560px;text-align:center;position:relative;z-index:1}
@@ -73,7 +69,6 @@
     .prob-text{font-size:14px;color:rgba(255,255,255,.6);line-height:1.6}
     .prob-text strong{color:#fff}
 
-    /* ── SLIDE 3: SOLUTION ── */
     .s3{background:var(--dark)}
     .s3::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 110%,rgba(88,204,2,.1),transparent 55%)}
     .s3-inner{max-width:600px;text-align:center;position:relative;z-index:1}
@@ -86,7 +81,6 @@
     .feat.highlight{background:rgba(88,204,2,.08);border-color:rgba(88,204,2,.2);grid-column:span 2}
     .feat.highlight .feat-h{font-size:16px;color:var(--green)}
 
-    /* ── SLIDE 4: CONTENT ── */
     .s4{background:#080807}
     .s4-inner{max-width:600px;width:100%;position:relative;z-index:1}
     .lessons-preview{display:flex;flex-direction:column;gap:8px;margin-top:24px}
@@ -99,7 +93,6 @@
     .paid-b{background:rgba(255,200,0,.1);color:var(--gold)}
     .lp-more{text-align:center;padding:14px;font-size:13px;color:rgba(255,255,255,.2);font-style:italic}
 
-    /* ── SLIDE 5: PRACTICE ── */
     .s5{background:var(--dark)}
     .s5::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 50% at 100% 0%,rgba(28,176,246,.08),transparent 50%)}
     .s5-inner{max-width:600px;text-align:center;position:relative;z-index:1}
@@ -109,7 +102,6 @@
     .type-name{font-size:11px;font-weight:700;color:rgba(255,255,255,.5);line-height:1.3}
     .ai-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(159,111,240,.12);border:1px solid rgba(159,111,240,.25);border-radius:100px;padding:10px 20px;font-size:13px;font-weight:700;color:var(--purple);margin-top:20px}
 
-    /* ── SLIDE 6: PRICING ── */
     .s6{background:#070706}
     .s6::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 50% 100%,rgba(88,204,2,.08),transparent 55%)}
     .s6-inner{max-width:520px;text-align:center;position:relative;z-index:1}
@@ -123,12 +115,11 @@
     .price-features li{display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(255,255,255,.6);padding:8px 0;border-bottom:1px solid rgba(255,255,255,.05)}
     .price-features li:last-child{border-bottom:none}
     .price-features li::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0}
-    .cta-btn{display:block;background:var(--green);color:#fff;font-family:'Manrope',sans-serif;font-size:16px;font-weight:700;padding:16px;border-radius:100px;text-decoration:none;text-align:center;transition:all .2s;box-shadow:0 4px 24px rgba(88,204,2,.3);margin:0 auto;max-width:320px}
+    .cta-btn{display:block;background:var(--green);color:#000;font-family:'Manrope',sans-serif;font-size:16px;font-weight:700;padding:16px;border-radius:100px;text-decoration:none;text-align:center;transition:all .2s;box-shadow:0 4px 24px rgba(88,204,2,.3);margin:0 auto;max-width:320px}
     .cta-btn:hover{background:var(--green2);transform:translateY(-2px)}
     .wa-link{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:14px;font-size:13px;color:rgba(255,255,255,.3);text-decoration:none}
     .wa-link:hover{color:rgba(255,255,255,.6)}
 
-    /* ── SLIDE 7: CTA ── */
     .s7{background:var(--dark)}
     .s7::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 100% 70% at 50% 50%,rgba(88,204,2,.07),transparent 60%)}
     .s7-inner{text-align:center;position:relative;z-index:1;max-width:520px}
@@ -139,7 +130,6 @@
     .final-cta{display:inline-block;background:var(--green);color:#000;font-weight:800;padding:16px 40px;border-radius:100px;text-decoration:none;font-size:18px;margin:16px 0}
     .url-chip{background:rgba(255,255,255,.08);padding:12px 24px;border-radius:100px;font-family:'JetBrains Mono',monospace;font-size:15px;margin-top:16px}
 
-    /* ── NAV DOTS ── */
     .nav-dots{position:fixed;right:20px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:8px;z-index:100}
     .nav-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.15);cursor:pointer;transition:all .3s}
     .nav-dot.active{background:var(--green);transform:scale(1.3)}
@@ -150,6 +140,7 @@
       .types-grid{grid-template-columns:repeat(2,1fr)}
       .stats-row{gap:20px}
       .price-card{padding:24px}
+      .feat-icon{font-size:clamp(20px,5vw,32px)}
     }
   </style>
 </head>
@@ -166,7 +157,7 @@
     <div class="hero-logo">
       <span>0</span><span class="green">to</span><span>160</span>
     </div>
-    <p class="tagline">Подготовка к <strong>Duolingo English Test</strong><br>на русском языке — для тех кто хочет результат</p>
+    <p class="tagline">Подготовка к <strong>Duolingo English Test</strong><br>на русском языке — для всего СНГ</p>
     <div class="stats-row">
       <div class="stat"><div class="stat-n">20</div><div class="stat-l">уроков</div></div>
       <div class="stat"><div class="stat-n">500+</div><div class="stat-l">вопросов</div></div>
@@ -184,22 +175,22 @@
     <h2 class="slide-h">Почему студенты<br>сдают <span class="red">ниже</span> своего уровня?</h2>
     <div class="problem-list">
       <div class="prob"><div class="prob-icon">🌐</div><div class="prob-text"><strong>Все материалы на английском</strong> — учишь английский на английском. Объяснения не заходят.</div></div>
-      <div class="prob"><div class="prob-icon">🎯</div><div class="prob-text"><strong>Не знают формат DET</strong> — готовятся как к IELTS, а это другой тест с другими стратегиями.</div></div>
-      <div class="prob"><div class="prob-icon">💸</div><div class="prob-text"><strong>Репетиторы стоят дорого</strong> — 5000–15000 ₸ за урок. За курс уходит больше чем стоит сам тест.</div></div>
+      <div class="prob"><div class="prob-icon">🎯</div><div class="prob-text"><strong>Не знают формат DET</strong> — готовятся как к IELTS, а это другой тест.</div></div>
+      <div class="prob"><div class="prob-icon">💸</div><div class="prob-text"><strong>Репетиторы стоят дорого</strong> — 5000–15000 ₸ за урок.</div></div>
     </div>
   </div>
 </div>
 
-<!-- SLIDE 3: SOLUTION -->
+<!-- SLIDE 3: SOLUTION (обновлённый с флагами СНГ) -->
 <div class="slide s3" id="slide-2">
   <div class="s3-inner">
     <div class="slide-label">Решение</div>
     <h2 class="slide-h">DET по-русски.<br><span class="green">Без компромиссов.</span></h2>
     <div class="features-grid">
       <div class="feat highlight">
-        <div class="feat-icon">🇷🇺</div>
+        <div class="feat-icon">🇰🇿🇷🇺🇦🇿🇧🇾🇰🇬🇹🇯🇺🇿🇦🇲🇲🇩</div>
         <div class="feat-h">Объяснения на родном языке</div>
-        <div class="feat-p">Все стратегии, разборы ошибок и лайфхаки — по-русски. Потому что думаешь ты по-русски.</div>
+        <div class="feat-p">Все стратегии, разборы ошибок и лайфхаки — по-русски. Для всего СНГ!</div>
       </div>
       <div class="feat">
         <div class="feat-icon">🎯</div>
@@ -209,7 +200,7 @@
       <div class="feat">
         <div class="feat-icon">🤖</div>
         <div class="feat-h">AI-проверка эссе</div>
-        <div class="feat-p">Пишешь — получаешь оценку и разбор ошибок от AI мгновенно.</div>
+        <div class="feat-p">Пишешь — получаешь оценку и разбор ошибок мгновенно.</div>
       </div>
       <div class="feat">
         <div class="feat-icon">📱</div>
@@ -219,7 +210,7 @@
       <div class="feat">
         <div class="feat-icon">♾️</div>
         <div class="feat-h">Доступ навсегда</div>
-        <div class="feat-p">Одна оплата — всё навсегда. Без подписок и ежемесячных платежей.</div>
+        <div class="feat-p">Одна оплата — всё навсегда. Без подписок.</div>
       </div>
     </div>
   </div>
@@ -311,7 +302,6 @@ slides.forEach((_, i) => {
   dotsContainer.appendChild(dot);
 });
 
-// Update active dot on scroll
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if(entry.isIntersecting){
@@ -323,7 +313,7 @@ const observer = new IntersectionObserver(entries => {
 
 slides.forEach(s => observer.observe(s));
 
-// Animate elements on enter
+// Animate on scroll
 const animObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if(entry.isIntersecting){
