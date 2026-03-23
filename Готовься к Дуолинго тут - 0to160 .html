@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>0to160 — Превью платформы</title>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --green:#58cc02;--green2:#46a302;--green-pale:#e8f9d4;
+  --gold:#ffc800;--teal:#1cb0f6;--purple:#9f6ff0;
+  --dark:#0f0e0b;--bg:#f7f5f0;
+}
+html{scroll-behavior:smooth;scroll-snap-type:y mandatory}
+body{font-family:'Manrope',sans-serif;background:var(--dark);overflow-x:hidden}
+
+/* ── SLIDES ── */
+.slide{min-height:100vh;scroll-snap-align:start;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 24px;position:relative;overflow:hidden}
+
+/* ── SLIDE 1: HERO ── */
+.s1{background:var(--dark)}
+.s1::before{content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 80% 60% at 50% -10%,rgba(88,204,2,.18),transparent 55%),
+             radial-gradient(ellipse 50% 50% at 100% 100%,rgba(28,176,246,.1),transparent 60%);
+  pointer-events:none}
+.grid-bg{position:absolute;inset:0;
+  background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),
+                   linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);
+  background-size:48px 48px;pointer-events:none}
+.s1-inner{position:relative;z-index:1;text-align:center;max-width:600px}
+.badge{display:inline-flex;align-items:center;gap:8px;background:rgba(88,204,2,.1);border:1px solid rgba(88,204,2,.25);border-radius:100px;padding:7px 18px;font-size:12px;font-weight:700;color:var(--green);letter-spacing:.06em;text-transform:uppercase;margin-bottom:28px;animation:fadeUp .6s ease both}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--green);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.4)}}
+.hero-logo{font-family:'Unbounded',sans-serif;font-size:clamp(52px,12vw,96px);font-weight:900;color:#fff;line-height:.95;letter-spacing:-.04em;margin-bottom:16px;animation:fadeUp .6s .1s ease both}
+.hero-logo .green{color:var(--green)}
+.hero-logo .arrow{color:rgba(255,255,255,.2);font-size:.7em}
+.tagline{font-size:clamp(15px,3vw,20px);color:rgba(255,255,255,.5);line-height:1.6;margin-bottom:36px;animation:fadeUp .6s .2s ease both}
+.tagline strong{color:#fff}
+.stats-row{display:flex;justify-content:center;gap:32px;flex-wrap:wrap;animation:fadeUp .6s .3s ease both}
+.stat{text-align:center}
+.stat-n{font-family:'Unbounded',sans-serif;font-size:28px;font-weight:900;color:var(--green);line-height:1}
+.stat-l{font-size:11px;color:rgba(255,255,255,.35);font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-top:4px}
+.scroll-hint{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;animation:fadeUp .6s .6s ease both}
+.scroll-hint span{font-size:11px;color:rgba(255,255,255,.2);letter-spacing:.1em;text-transform:uppercase}
+.chevron{width:24px;height:24px;border-right:2px solid rgba(255,255,255,.2);border-bottom:2px solid rgba(255,255,255,.2);transform:rotate(45deg);animation:bounce 1.5s infinite}
+@keyframes bounce{0%,100%{transform:rotate(45deg) translateY(0)}50%{transform:rotate(45deg) translateY(5px)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+
+/* ── SLIDE 2: PROBLEM ── */
+.s2{background:#0a0a08}
+.s2::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 40% at 0% 50%,rgba(255,75,75,.06),transparent)}
+.s2-inner{max-width:560px;text-align:center;position:relative;z-index:1}
+.slide-label{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.2);margin-bottom:20px}
+.slide-h{font-family:'Unbounded',sans-serif;font-size:clamp(24px,5vw,42px);font-weight:900;color:#fff;line-height:1.15;letter-spacing:-.02em;margin-bottom:20px}
+.slide-h .red{color:#ff4b4b}
+.slide-h .green{color:var(--green)}
+.problem-list{display:flex;flex-direction:column;gap:12px;text-align:left;margin-bottom:32px}
+.prob{display:flex;align-items:flex-start;gap:14px;background:rgba(255,75,75,.06);border:1px solid rgba(255,75,75,.1);border-radius:14px;padding:16px}
+.prob-icon{font-size:20px;flex-shrink:0;margin-top:1px}
+.prob-text{font-size:14px;color:rgba(255,255,255,.6);line-height:1.6}
+.prob-text strong{color:#fff}
+.arrow-down{font-size:28px;color:rgba(255,255,255,.15);margin:8px 0}
+
+/* ── SLIDE 3: SOLUTION ── */
+.s3{background:var(--dark)}
+.s3::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 110%,rgba(88,204,2,.1),transparent 55%)}
+.s3-inner{max-width:600px;text-align:center;position:relative;z-index:1}
+.features-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:28px;text-align:left}
+.feat{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:16px;padding:20px;transition:border-color .3s}
+.feat:hover{border-color:rgba(88,204,2,.3)}
+.feat-icon{font-size:24px;margin-bottom:10px}
+.feat-h{font-size:14px;font-weight:700;color:#fff;margin-bottom:5px}
+.feat-p{font-size:12px;color:rgba(255,255,255,.4);line-height:1.6}
+.feat.highlight{background:rgba(88,204,2,.08);border-color:rgba(88,204,2,.2);grid-column:span 2}
+.feat.highlight .feat-h{font-size:16px;color:var(--green)}
+
+/* ── SLIDE 4: CONTENT ── */
+.s4{background:#080807}
+.s4-inner{max-width:600px;width:100%;position:relative;z-index:1}
+.lessons-preview{display:flex;flex-direction:column;gap:8px;margin-top:24px}
+.lp-item{display:flex;align-items:center;gap:12px;padding:12px 16px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:12px;transition:all .2s}
+.lp-item:hover{background:rgba(88,204,2,.06);border-color:rgba(88,204,2,.15)}
+.lp-num{font-family:'JetBrains Mono',monospace;font-size:12px;color:rgba(255,255,255,.2);width:28px;flex-shrink:0}
+.lp-title{font-size:13px;color:rgba(255,255,255,.6);flex:1}
+.lp-badge{font-size:10px;font-weight:700;padding:3px 8px;border-radius:100px;flex-shrink:0}
+.free-b{background:rgba(88,204,2,.12);color:var(--green)}
+.paid-b{background:rgba(255,200,0,.1);color:var(--gold)}
+.lp-more{text-align:center;padding:14px;font-size:13px;color:rgba(255,255,255,.2);font-style:italic}
+
+/* ── SLIDE 5: PRACTICE ── */
+.s5{background:var(--dark)}
+.s5::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 50% at 100% 0%,rgba(28,176,246,.08),transparent 50%)}
+.s5-inner{max-width:600px;text-align:center;position:relative;z-index:1}
+.types-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:24px}
+.type-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:16px 10px;text-align:center}
+.type-emoji{font-size:22px;margin-bottom:8px}
+.type-name{font-size:11px;font-weight:700;color:rgba(255,255,255,.5);line-height:1.3}
+.ai-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(159,111,240,.12);border:1px solid rgba(159,111,240,.25);border-radius:100px;padding:10px 20px;font-size:13px;font-weight:700;color:var(--purple);margin-top:20px}
+
+/* ── SLIDE 6: PRICING ── */
+.s6{background:#070706}
+.s6::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 50% 100%,rgba(88,204,2,.08),transparent 55%)}
+.s6-inner{max-width:520px;text-align:center;position:relative;z-index:1}
+.price-card{background:rgba(255,255,255,.04);border:2px solid rgba(88,204,2,.25);border-radius:24px;padding:32px;margin-top:28px;position:relative;overflow:hidden}
+.price-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--green),var(--gold),transparent)}
+.price-tag{position:absolute;top:-1px;left:50%;transform:translateX(-50%);background:var(--green);color:#fff;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:5px 16px;border-radius:0 0 12px 12px}
+.price-val{font-family:'Unbounded',sans-serif;font-size:52px;font-weight:900;color:#fff;line-height:1;margin:20px 0 4px}
+.price-val span{font-size:22px;color:rgba(255,255,255,.4)}
+.price-sub{font-size:13px;color:rgba(255,255,255,.3);margin-bottom:24px}
+.price-features{list-style:none;text-align:left;margin-bottom:24px}
+.price-features li{display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(255,255,255,.6);padding:8px 0;border-bottom:1px solid rgba(255,255,255,.05)}
+.price-features li:last-child{border-bottom:none}
+.price-features li::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0}
+.cta-btn{display:block;background:var(--green);color:#fff;font-family:'Manrope',sans-serif;font-size:16px;font-weight:700;padding:16px;border-radius:100px;text-decoration:none;text-align:center;transition:all .2s;box-shadow:0 4px 24px rgba(88,204,2,.3)}
+.cta-btn:hover{background:var(--green2);transform:translateY(-2px)}
+.wa-link{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:14px;font-size:13px;color:rgba(255,255,255,.3);text-decoration:none}
+.wa-link:hover{color:rgba(255,255,255,.6)}
+
+/* ── SLIDE 7: CTA ── */
+.s7{background:var(--dark)}
+.s7::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 100% 70% at 50% 50%,rgba(88,204,2,.07),transparent 60%)}
+.s7-inner{text-align:center;position:relative;z-index:1;max-width:520px}
+.final-logo{font-family:'Unbounded',sans-serif;font-size:clamp(48px,10vw,80px);font-weight:900;color:#fff;letter-spacing:-.03em;line-height:.95;margin-bottom:20px}
+.final-logo .green{color:var(--green)}
+.final-logo .faint{color:rgba(255,255,255,.15)}
+.final-sub{font-size:16px;color:rgba(255,255,255,.4);line-height:1.7;margin-bottom:36px}
+.final-sub strong{color:#fff}
+.final-cta{display:inline-flex;align-items:center;gap:10px;background:var(--green);color:#fff;font-family:'Manrope',sans-serif;font-size:16px;font-weight:700;padding:18px 36px;border-radius:100px;text-decoration:none;box-shadow:0 8px 32px rgba(88,204,2,.35);transition:all .2s}
+.final-cta:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(88,204,2,.45)}
+.url-chip{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:100px;padding:10px 20px;font-family:'JetBrains Mono',monospace;font-size:14px;color:rgba(255,255,255,.5);margin-top:20px}
+
+/* ── NAV DOTS ── */
+.nav-dots{position:fixed;right:20px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:8px;z-index:100}
+.nav-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.15);cursor:pointer;transition:all .3s}
+.nav-dot.active{background:var(--green);transform:scale(1.3)}
+
+@media(max-width:500px){
+  .features-grid{grid-template-columns:1fr}
+  .feat.highlight{grid-column:span 1}
+  .types-grid{grid-template-columns:repeat(2,1fr)}
+  .stats-row{gap:20px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV DOTS -->
+<div class="nav-dots" id="navDots"></div>
+
+<!-- SLIDE 1: HERO -->
+<div class="slide s1" id="slide-0">
+  <div class="grid-bg"></div>
+  <div class="s1-inner">
+    <div class="badge"><div class="dot"></div>Первая платформа в СНГ</div>
+    <div class="hero-logo">
+      <span>0</span><span class="green">to</span><span>160</span>
+    </div>
+    <p class="tagline">Подготовка к <strong>Duolingo English Test</strong><br>на русском языке — для тех кто хочет результат</p>
+    <div class="stats-row">
+      <div class="stat"><div class="stat-n">20</div><div class="stat-l">уроков</div></div>
+      <div class="stat"><div class="stat-n">500+</div><div class="stat-l">вопросов</div></div>
+      <div class="stat"><div class="stat-n">8</div><div class="stat-l">типов DET</div></div>
+      <div class="stat"><div class="stat-n">AI</div><div class="stat-l">проверка</div></div>
+    </div>
+  </div>
+  <div class="scroll-hint"><span>листай</span><div class="chevron"></div></div>
+</div>
+
+<!-- SLIDE 2: PROBLEM -->
+<div class="slide s2" id="slide-1">
+  <div class="s2-inner">
+    <div class="slide-label">Проблема</div>
+    <h2 class="slide-h">Почему студенты<br>сдают <span class="red">ниже</span> своего уровня?</h2>
+    <div class="problem-list">
+      <div class="prob"><div class="prob-icon">🌐</div><div class="prob-text"><strong>Все материалы на английском</strong> — учишь английский на английском. Объяснения не заходят.</div></div>
+      <div class="prob"><div class="prob-icon">🎯</div><div class="prob-text"><strong>Не знают формат DET</strong> — готовятся как к IELTS, а это другой тест с другими стратегиями.</div></div>
+      <div class="prob"><div class="prob-icon">💸</div><div class="prob-text"><strong>Репетиторы стоят дорого</strong> — 5000–15000 ₸ за урок. За курс уходит больше чем стоит сам тест.</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 3: SOLUTION -->
+<div class="slide s3" id="slide-2">
+  <div class="s3-inner">
+    <div class="slide-label">Решение</div>
+    <h2 class="slide-h">DET по-русски.<br><span class="green">Без компромиссов.</span></h2>
+    <div class="features-grid">
+      <div class="feat highlight">
+        <div class="feat-icon">🇷🇺</div>
+        <div class="feat-h">Объяснения на родном языке</div>
+        <div class="feat-p">Все стратегии, разборы ошибок и лайфхаки — по-русски. Потому что думаешь ты по-русски.</div>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">🎯</div>
+        <div class="feat-h">Только DET</div>
+        <div class="feat-p">Не IELTS, не TOEFL. Специально под формат Duolingo English Test.</div>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">🤖</div>
+        <div class="feat-h">AI-проверка эссе</div>
+        <div class="feat-p">Пишешь — получаешь оценку и разбор ошибок от AI мгновенно.</div>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">📱</div>
+        <div class="feat-h">Везде и всегда</div>
+        <div class="feat-p">Платформа работает с телефона. Учись в метро, дома, в обед.</div>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">♾️</div>
+        <div class="feat-h">Доступ навсегда</div>
+        <div class="feat-p">Одна оплата — всё навсегда. Без подписок и ежемесячных платежей.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 4: CONTENT -->
+<div class="slide s4" id="slide-3">
+  <div class="s4-inner">
+    <div class="slide-label" style="text-align:center">Программа курса</div>
+    <h2 class="slide-h" style="text-align:center;font-size:clamp(20px,4vw,32px)">20 уроков — от нуля<br>до <span class="green">уверенной сдачи</span></h2>
+    <div class="lessons-preview">
+      <div class="lp-item"><span class="lp-num">01</span><span class="lp-title">Что такое Duolingo English Test</span><span class="lp-badge free-b">Бесплатно</span></div>
+      <div class="lp-item"><span class="lp-num">02</span><span class="lp-title">Как набрать 130+ за 2 недели</span><span class="lp-badge free-b">Бесплатно</span></div>
+      <div class="lp-item"><span class="lp-num">03</span><span class="lp-title">Технические требования DET</span><span class="lp-badge free-b">Бесплатно</span></div>
+      <div class="lp-item"><span class="lp-num">04</span><span class="lp-title">Read and Complete</span><span class="lp-badge paid-b">Полный доступ</span></div>
+      <div class="lp-item"><span class="lp-num">05</span><span class="lp-title">Interactive Reading</span><span class="lp-badge paid-b">Полный доступ</span></div>
+      <div class="lp-item"><span class="lp-num">07</span><span class="lp-title">Write About the Photo</span><span class="lp-badge paid-b">Полный доступ</span></div>
+      <div class="lp-item"><span class="lp-num">08</span><span class="lp-title">Write About the Topic</span><span class="lp-badge paid-b">Полный доступ</span></div>
+      <div class="lp-item"><span class="lp-num">12</span><span class="lp-title">Listen and Type</span><span class="lp-badge paid-b">Полный доступ</span></div>
+      <div class="lp-more">+ ещё 12 уроков включая симуляцию теста</div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 5: PRACTICE -->
+<div class="slide s5" id="slide-4">
+  <div class="s5-inner">
+    <div class="slide-label">Практика</div>
+    <h2 class="slide-h">500+ вопросов.<br>Все <span style="color:var(--teal)">8 типов</span> DET.</h2>
+    <p style="font-size:14px;color:rgba(255,255,255,.4);margin-top:8px">Не просто теория — реальная практика с проверкой</p>
+    <div class="types-grid">
+      <div class="type-card"><div class="type-emoji">📖</div><div class="type-name">Read & Complete</div></div>
+      <div class="type-card"><div class="type-emoji">🔤</div><div class="type-name">Interactive Reading</div></div>
+      <div class="type-card"><div class="type-emoji">✏️</div><div class="type-name">Fill in the Blanks</div></div>
+      <div class="type-card"><div class="type-emoji">👂</div><div class="type-name">Listen & Type</div></div>
+      <div class="type-card"><div class="type-emoji">📸</div><div class="type-name">Write About Photo</div></div>
+      <div class="type-card"><div class="type-emoji">📝</div><div class="type-name">Write About Topic</div></div>
+      <div class="type-card"><div class="type-emoji">🎤</div><div class="type-name">Speak About Photo</div></div>
+      <div class="type-card"><div class="type-emoji">🎙️</div><div class="type-name">Speak About Topic</div></div>
+    </div>
+    <div class="ai-badge">🤖 Write & Speak задания проверяет AI — получай оценку и разбор</div>
+  </div>
+</div>
+
+<!-- SLIDE 6: PRICING -->
+<div class="slide s6" id="slide-5">
+  <div class="s6-inner">
+    <div class="slide-label">Цена</div>
+    <h2 class="slide-h">Меньше чем<br>один урок <span class="green">репетитора</span></h2>
+    <div class="price-card">
+      <div class="price-tag">🔥 Полный доступ</div>
+      <div class="price-val">19 900<span> ₸</span></div>
+      <div class="price-sub">единоразово · навсегда · без подписки</div>
+      <ul class="price-features">
+        <li>20 уроков подготовки к DET</li>
+        <li>500+ практических вопросов</li>
+        <li>AI-проверка письменных заданий</li>
+        <li>Симуляция реального теста</li>
+        <li>Разбор типичных ошибок</li>
+        <li>Доступ навсегда + все обновления</li>
+      </ul>
+      <a href="https://wa.me/+77772327571?text=Хочу+купить+0to160" class="cta-btn">Купить через Kaspi →</a>
+    </div>
+    <a href="https://wa.me/+77772327571" class="wa-link">💬 Вопросы? Написать в WhatsApp</a>
+  </div>
+</div>
+
+<!-- SLIDE 7: FINAL CTA -->
+<div class="slide s7" id="slide-6">
+  <div class="s7-inner">
+    <div class="final-logo">
+      <span class="faint">0</span><span class="green">to</span><span class="faint">160</span>
+    </div>
+    <p class="final-sub">Начни с <strong>бесплатных уроков</strong> прямо сейчас.<br>Первые 3 урока открыты для всех — без регистрации.</p>
+    <a href="https://0to160.vercel.app" class="final-cta">Открыть платформу →</a>
+    <div class="url-chip">🌐 0to160.vercel.app</div>
+  </div>
+</div>
+
+<script>
+// Nav dots
+const slides = document.querySelectorAll('.slide');
+const dotsContainer = document.getElementById('navDots');
+
+slides.forEach((_, i) => {
+  const dot = document.createElement('div');
+  dot.className = 'nav-dot' + (i === 0 ? ' active' : '');
+  dot.onclick = () => slides[i].scrollIntoView({behavior:'smooth'});
+  dotsContainer.appendChild(dot);
+});
+
+// Update active dot on scroll
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      const idx = [...slides].indexOf(entry.target);
+      document.querySelectorAll('.nav-dot').forEach((d,i) => d.classList.toggle('active', i===idx));
+    }
+  });
+}, {threshold: 0.5});
+
+slides.forEach(s => observer.observe(s));
+
+// Animate elements on enter
+const animObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, {threshold: 0.1});
+
+document.querySelectorAll('.feat, .prob, .lp-item, .type-card').forEach((el, i) => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(20px)';
+  el.style.transition = `opacity .5s ${i * 0.07}s ease, transform .5s ${i * 0.07}s ease`;
+  animObserver.observe(el);
+});
+</script>
+</body>
+</html>
