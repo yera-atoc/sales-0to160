@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1080px;height:1080px;overflow:hidden;background:#0f0e0b;font-family:'Unbounded',sans-serif}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Manrope:wght@500;700;800&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+<svg width="1080" height="1080" viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bg1" cx="50%" cy="0%" r="70%">
+      <stop offset="0%" stop-color="#58cc02" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#0f0e0b" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="bg2" cx="100%" cy="100%" r="60%">
+      <stop offset="0%" stop-color="#1cb0f6" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#0f0e0b" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="greenLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#58cc02" stop-opacity="0"/>
+      <stop offset="30%" stop-color="#58cc02"/>
+      <stop offset="70%" stop-color="#ffc800"/>
+      <stop offset="100%" stop-color="#ffc800" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="grid" width="54" height="54" patternUnits="userSpaceOnUse">
+      <path d="M 54 0 L 0 0 0 54" fill="none" stroke="white" stroke-width="0.5" stroke-opacity="0.04"/>
+    </pattern>
+    <clipPath id="roundRect">
+      <rect width="1080" height="1080" rx="0"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1080" height="1080" fill="#0f0e0b"/>
+  <rect width="1080" height="1080" fill="url(#grid)"/>
+  <rect width="1080" height="1080" fill="url(#bg1)"/>
+  <rect width="1080" height="1080" fill="url(#bg2)"/>
+
+  <!-- Top accent line -->
+  <rect x="0" y="0" width="1080" height="3" fill="url(#greenLine)"/>
+
+  <!-- Badge -->
+  <rect x="72" y="80" width="340" height="48" rx="24" fill="#58cc02" fill-opacity="0.12" stroke="#58cc02" stroke-opacity="0.3" stroke-width="1.5"/>
+  <circle cx="100" cy="104" r="7" fill="#58cc02"/>
+  <text x="120" y="110" font-family="Manrope" font-size="18" font-weight="700" fill="#58cc02" letter-spacing="1">ПЕРВЫЕ В СНГ</text>
+
+  <!-- Main number -->
+  <text x="72" y="360" font-family="Unbounded" font-size="240" font-weight="900" fill="white" letter-spacing="-8" opacity="1">0</text>
+  <text x="268" y="360" font-family="Unbounded" font-size="200" font-weight="900" fill="#58cc02" letter-spacing="-6">to</text>
+  <text x="480" y="360" font-family="Unbounded" font-size="240" font-weight="900" fill="white" letter-spacing="-8">160</text>
+
+  <!-- Tagline -->
+  <text x="72" y="430" font-family="Manrope" font-size="32" font-weight="700" fill="white" opacity="0.9">Подготовка к Duolingo English Test</text>
+  <text x="72" y="475" font-family="Manrope" font-size="32" font-weight="500" fill="white" opacity="0.4">на русском языке · для результата</text>
+
+  <!-- Divider -->
+  <rect x="72" y="510" width="200" height="2" fill="#58cc02" opacity="0.4"/>
+
+  <!-- Stats row -->
+  <!-- Stat 1 -->
+  <text x="72" y="590" font-family="Unbounded" font-size="52" font-weight="900" fill="#58cc02">20</text>
+  <text x="72" y="622" font-family="Manrope" font-size="18" font-weight="600" fill="white" opacity="0.35">УРОКОВ</text>
+
+  <!-- Stat 2 -->
+  <text x="240" y="590" font-family="Unbounded" font-size="52" font-weight="900" fill="#ffc800">500+</text>
+  <text x="240" y="622" font-family="Manrope" font-size="18" font-weight="600" fill="white" opacity="0.35">ВОПРОСОВ</text>
+
+  <!-- Stat 3 -->
+  <text x="460" y="590" font-family="Unbounded" font-size="52" font-weight="900" fill="#1cb0f6">8</text>
+  <text x="460" y="622" font-family="Manrope" font-size="18" font-weight="600" fill="white" opacity="0.35">ТИПОВ DET</text>
+
+  <!-- Stat 4 -->
+  <text x="570" y="590" font-family="Unbounded" font-size="52" font-weight="900" fill="#9f6ff0">AI</text>
+  <text x="570" y="622" font-family="Manrope" font-size="18" font-weight="600" fill="white" opacity="0.35">ПРОВЕРКА</text>
+
+  <!-- Feature pills -->
+  <rect x="72" y="680" width="230" height="52" rx="26" fill="white" fill-opacity="0.06" stroke="white" stroke-opacity="0.1" stroke-width="1"/>
+  <text x="98" y="712" font-family="Manrope" font-size="20" font-weight="700" fill="white" opacity="0.7">✓ Бесплатный старт</text>
+
+  <rect x="318" y="680" width="230" height="52" rx="26" fill="white" fill-opacity="0.06" stroke="white" stroke-opacity="0.1" stroke-width="1"/>
+  <text x="344" y="712" font-family="Manrope" font-size="20" font-weight="700" fill="white" opacity="0.7">✓ Без репетиторов</text>
+
+  <rect x="564" y="680" width="230" height="52" rx="26" fill="white" fill-opacity="0.06" stroke="white" stroke-opacity="0.1" stroke-width="1"/>
+  <text x="590" y="712" font-family="Manrope" font-size="20" font-weight="700" fill="white" opacity="0.7">✓ Доступ навсегда</text>
+
+  <!-- Price section -->
+  <rect x="72" y="790" width="936" height="180" rx="24" fill="#58cc02" fill-opacity="0.08" stroke="#58cc02" stroke-opacity="0.2" stroke-width="1.5"/>
+  <rect x="72" y="790" width="3" height="180" fill="#58cc02" rx="2"/>
+
+  <text x="110" y="850" font-family="Manrope" font-size="22" font-weight="600" fill="white" opacity="0.5">Полный доступ — единоразово</text>
+  <text x="110" y="910" font-family="Unbounded" font-size="64" font-weight="900" fill="white">19 900 <tspan font-size="32" opacity="0.5">₸</tspan></text>
+  <text x="110" y="950" font-family="Manrope" font-size="20" font-weight="500" fill="white" opacity="0.35">вместо 5–6 занятий с репетитором</text>
+
+  <!-- URL -->
+  <rect x="740" y="830" width="280" height="100" rx="20" fill="#58cc02" fill-opacity="0.15" stroke="#58cc02" stroke-opacity="0.3" stroke-width="1.5"/>
+  <text x="880" y="875" font-family="JetBrains Mono" font-size="18" font-weight="700" fill="#58cc02" text-anchor="middle">0to160.vercel.app</text>
+  <text x="880" y="910" font-family="Manrope" font-size="16" font-weight="600" fill="white" opacity="0.4" text-anchor="middle">Попробуй бесплатно →</text>
+</svg>
+</body>
+</html>
